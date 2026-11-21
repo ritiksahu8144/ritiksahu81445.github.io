@@ -1,0 +1,38 @@
+/* styles.css - layout, festival themes (Diwali, Holi, Pongal), buttons, dialog */
+:root{--bg1:#1b1038;--bg2:#44195f;--ink:#fff2dc;--mut:#c9b6e6;--acc:#ffb627;--accink:#2a1500;--pan:rgba(255,255,255,.08);--line:rgba(255,255,255,.2);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#1b1038}}
+body[data-w="1"]{--bg1:#fff0f8;--bg2:#e2f2ff;--ink:#2b1646;--mut:#6b5a86;--acc:#e6007e;--accink:#fff;--pan:rgba(255,255,255,.75);--line:rgba(43,22,70,.2)}
+body[data-w="2"]{--bg1:#10301c;--bg2:#2f5a2c;--ink:#fdf3cf;--mut:#b9d1a0;--acc:#ffd23f;--accink:#2a2000;--pan:rgba(255,255,255,.09);--line:rgba(255,255,255,.2)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;color:var(--ink);background:linear-gradient(160deg,var(--bg1),var(--bg2)) fixed;font:400 16px/1.5 Mukta,system-ui,sans-serif;transition:background .4s}
+.scr{max-width:640px;margin:auto;padding:16px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.scr[hidden]{display:none}
+h1{font:400 clamp(40px,11vw,64px)/1.05 "Yatra One",Mukta,serif;margin:18px 0 0;text-align:center}
+.sub{margin:0;color:var(--mut);text-align:center;max-width:34ch}
+button{font:600 15px Mukta,sans-serif;cursor:pointer;color:var(--ink);background:var(--pan);border:1px solid var(--line);border-radius:12px;padding:10px 16px}
+button:hover:not(:disabled){border-color:var(--acc)}
+button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.pri{background:var(--acc);color:var(--accink);border-color:var(--acc);font-size:18px;padding:13px 26px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.chip{padding:6px 14px;border-radius:99px;border:1px solid var(--line);background:var(--pan);font-size:14px}
+.how{background:var(--pan);border:1px solid var(--line);border-radius:14px;padding:14px 18px;max-width:440px;font-size:14px}
+.how p{margin:4px 0}
+.top{display:flex;align-items:center;justify-content:space-between;width:100%;gap:8px}
+.top b{font:400 19px "Yatra One",Mukta,serif;text-align:center;line-height:1.2}
+.top small{display:block;font:400 12px Mukta;color:var(--mut)}
+#board{touch-action:none;border-radius:16px;background:var(--pan);border:1px solid var(--line);cursor:pointer}
+.stat{color:var(--mut);font-size:14px;margin:0}
+.tip{font-size:14px;color:var(--ink);background:var(--pan);border-radius:10px;padding:8px 12px;margin:0;text-align:center}
+#lgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;width:100%}
+@media (min-width:480px){#lgrid{grid-template-columns:repeat(10,1fr);gap:6px}}
+#lgrid button{padding:6px 0;font-size:13px;border-radius:9px;position:relative;line-height:1.15}
+#lgrid button i{display:block;font-style:normal;font-size:9px;color:var(--acc);letter-spacing:1px;height:11px}
+#lgrid button.cur{background:var(--acc);color:var(--accink);border-color:var(--acc)}
+#lgrid button.lock{opacity:.35}
+dialog{border:1px solid var(--line);border-radius:18px;background:var(--bg2);color:var(--ink);padding:24px 28px;text-align:center}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+dialog h2{font:400 30px "Yatra One",Mukta,serif;margin:0}
+.stars{font-size:40px;color:var(--acc);letter-spacing:6px;margin:6px 0}
+dialog .row{display:flex;gap:10px;justify-content:center;margin-top:14px;flex-wrap:wrap}

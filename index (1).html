@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rangoli Link – 10,000 Level Puzzle</title>
+<link href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Mukta:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body data-w="0">
+
+<section class="scr" id="home">
+  <h1>रंगोली लिंक</h1>
+  <p class="sub">Rangoli Link. Join matching dots, never cross a line, and light up the rangoli.</p>
+  <div class="chips"><span class="chip">🪔 Diwali</span><span class="chip">🎨 Holi</span><span class="chip">🌾 Pongal</span></div>
+  <button class="pri" id="cont">Play level 1</button>
+  <button id="lvls">All levels</button>
+  <button class="mus" aria-label="Music on or off"></button>
+  <div class="how">
+    <p><b>How to play</b></p>
+    <p>Drag from a dot to the dot of the same colour.</p>
+    <p>Lines can’t cross. Dragging over another line cuts it.</p>
+    <p>Link every pair and fill every tile to win. Solve without hints for 3 stars. Finish a level to open the next one.</p>
+  </div>
+  <p class="stat" id="prog"></p>
+</section>
+
+<section class="scr" id="game" hidden>
+  <div class="top">
+    <button id="back" aria-label="Back to menu">←</button>
+    <b id="ttl"></b>
+    <span><button id="hint">Hint 5</button> <button id="reset" aria-label="Restart level">↺</button> <button class="mus" aria-label="Music on or off"></button></span>
+  </div>
+  <canvas id="board"></canvas>
+  <p class="stat" id="stat"></p>
+  <button class="pri" id="nxt" hidden>Next level →</button>
+  <p class="tip" id="tip" hidden>Drag from a dot to its match. Link every pair and fill every tile to win.</p>
+</section>
+
+<section class="scr" id="levels" hidden>
+  <div class="top"><button id="lback" aria-label="Back to menu">←</button><b id="ltt">Levels</b><span></span></div>
+  <div id="lgrid"></div>
+  <div class="top"><button id="prev">Previous 100</button><button id="jump">Go to current</button><button id="next">Next 100</button></div>
+</section>
+
+<dialog id="win">
+  <h2 id="wt">Shabaash!</h2>
+  <div class="stars" id="wst"></div>
+  <p class="stat" id="wm"></p>
+  <div class="row"><button id="wl">Levels</button><button class="pri" id="wn">Next level</button></div>
+</dialog>
+
+<script src="core.js"></script>
+<script src="levels.js"></script>
+<script src="audio.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
